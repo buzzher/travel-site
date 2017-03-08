@@ -1,0 +1,16 @@
+@import 'normalize.css';
+
+/*24 7:00, see if the global var doesnt work*/
+@import 'base/_variables.css';
+@import 'base/_mixins.css';
+@import 'base/_global';
+/*_ underscore mean a portial file, not use it just for itself for the area in the html, dont need .css*/
+@import 'modules/_large-hero';
+/*in temp/styles.css it will show .large-hero { posiotion: relative; } like in _large-hero.css*/
+@import 'modules/_btn';
+@import 'modules/_wrapper';
+@import 'modules/_page-section';
+@import 'modules/_headline';
+@import 'modules/_row';
+/*by setting up a new div, its keep our colomn flex and future prof 24 5:00*/
+@import 'modules/_generic-content-container';

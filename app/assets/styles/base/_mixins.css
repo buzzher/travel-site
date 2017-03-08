@@ -1,0 +1,26 @@
+@define-mixin atSmall {
+	@media(min-width: 530px) {
+		@mixin-content;
+	}
+}
+
+@define-mixin atMedium {
+	@media(min-width: 800px) {
+		@mixin-content;
+	}
+}
+
+@define-mixin atLarge {
+	@media(min-width: 1200px) {
+		@mixin-content;
+	}
+}
+
+@define-mixin clearFix {
+	/*this make space between the divs becuse when using float the its like the browser doesnt see the spacing or margin of that float content*/
+	&::after { /*fake content with css, means that this css selector will add a blnk space after all the content in the main row div*/
+		content: ''; /*create empty space*/
+		clear: both; /*we telling the fake space to clear both*/
+		display: table; /*table - add extra browser suport*/
+	}
+}
