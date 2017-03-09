@@ -14,3 +14,5 @@
 @import 'modules/_row';
 /*by setting up a new div, its keep our colomn flex and future prof 24 5:00*/
 @import 'modules/_generic-content-container';
+@import 'modules/_section-title.css';
+@import 'modules/_feature-item';

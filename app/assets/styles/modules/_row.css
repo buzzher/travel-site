@@ -1,7 +1,7 @@
 .row {
 
 	/*move to mixins
-		this make space between the divs becuse when using float the its like the browser doesnt see the spacing or margin of that float content
+		this make space between the divs because when using float the its like the browser doesnt see the spacing or margin of that float content
 		&::after { /*fake content with css, means that this css selector will add a blnk space after all the content in the main row div
 		content: ''; create empty space
 		clear: both; we telling the fake space to clear both
@@ -9,14 +9,22 @@
 	}*/
 	@mixin clearFix;
 
-	&--gutters {
+	&--gutters { /*margin-right*/
 		margin-right: -65px; /*check wrapper overflow: hidden 22 15:00*/
+	}
+
+	&--gutters-large { /*margin-right*/
+		margin-right: -100px;
 	}
 
 	&--gutters > div { /*__gutters > div - mean select all gutter kids(div)*/
 		padding-right: 65px;
 		/*box-sizing: border-box; move it to global.css, when add padding the width is more then 100%, box-sizing fix it*/
 	}
+
+	&--gutters-large > div { /*padding-right*/
+		padding-right: 100px;
+	}	
 
 	&__b-margin-until-medium {
 		margin-bottom: 1rem;
@@ -40,6 +48,11 @@
 		&__medium-8--smaller {
 			width: 63%;
 		}
+
+		&__medium-6 {
+			float: left;
+			width: 50%;
+			}
 	}
 
 	
