@@ -605,6 +605,32 @@ a {
   max-width: 978px;
 }
 
+.wrapper--no-padding-until-medium {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+@media(min-width: 800px) {
+
+  .wrapper--no-padding-until-medium {
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+}
+
+.wrapper--no-padding-until-large {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+@media(min-width: 1010px) {
+
+  .wrapper--no-padding-until-large {
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+}
+
 .wrapper .wrapper {/*nested wrapper(wrapper inside wrapper), we not apply the 18px padding from the main wrapper, exp img of the couple holding hends*/
   padding-left: 0;
   padding-right: 0;
@@ -623,6 +649,7 @@ a {
 
 .page-section {
 	padding: 1.2rem 0;
+	
 }
 
 /*mobile first, small screen*/
@@ -634,9 +661,43 @@ a {
   }
 }
 
+.page-section--no-b-padding-until-medium {/*get rid of the bottom lightblue/#e0e6ef in the last testimonials in small screen*/
+  padding-bottom: 0;
+}
+
+@media(min-width: 800px) {
+
+  .page-section {/* in medium/large screen adding padding to the bottom*/
+    padding-bottom: 4.5rem;
+  }
+}
+
+.page-section--no-b-padding-until-large {/*get rid of the bottom lightblue/#e0e6ef in the last testimonials in small screen*/
+  padding-bottom: 0;
+}
+
+@media(min-width: 1010px) {
+
+  .page-section {/* in medium/large screen adding padding to the bottom*/
+    padding-bottom: 4.5rem;
+  }
+}
+
 .page-section--blue {
   background-color: #2f5572;
   color: #fff;
+}
+
+.page-section--testimonials {
+  background-color: #e0e6ef;
+}
+
+@media(min-width: 1010px) {
+
+  .page-section--testimonials {
+    background: url('/assets/images/testimonials-bg.jpg') top center no-repeat;
+    background-size: cover;
+  }
 }
 
 .headline {
@@ -714,6 +775,10 @@ a {
 		display: table; table - add extra browser suport
 	}*/
 
+.row--t-padding {
+  padding-top: 80px;
+}
+
 .row--gutters {/*margin-right*/
   margin-right: -65px;/*check wrapper overflow: hidden 22 15:00*/
 }
@@ -722,12 +787,20 @@ a {
   margin-right: -100px;
 }
 
+.row--gutters-small {
+  margin-right: -45px;
+}
+
 .row--gutters > div {/*__gutters > div - mean select all gutter kids(div)*/
   padding-right: 65px;/*box-sizing: border-box; move it to global.css, when add padding the width is more then 100%, box-sizing fix it*/
 }
 
 .row--gutters-large > div {/*padding-right*/
   padding-right: 100px;
+}
+
+.row--gutters-small > div {
+  padding-right: 45px;
 }
 
 .row__b-margin-until-medium {
@@ -760,6 +833,67 @@ a {
   }
 }
 
+@media(min-width: 1010px) {
+
+  .row__large-4 {
+    float: left;
+    width: 33.33%;
+  }
+
+  .row__medium-4--larger {
+    width: 37%;
+  }
+
+  .row__large-8 {
+    float: left;
+    width: 66.66%;
+  }
+
+  .row__large-8--smaller {
+    width: 63%;
+  }
+
+  .row__large-6 {
+    float: left;
+    width: 50%;
+  }
+}
+
+/* Begin Equal Height Rules 
+	make the testimonials background same height/level as any one in a medium size screen*/
+
+@media(min-width: 800px) {
+
+  .row--equal-height-at-medium {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.row--equal-height-at-medium > div {
+  float: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media(min-width: 1010px) {
+
+  .row--equal-height-at-large {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.row--equal-height-at-large > div {
+  float: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 /*by setting up a new div, its keep our colomn flex and future prof 24 5:00*/
 
 .generic-content-container p {
@@ -785,6 +919,11 @@ a {
 	font-size: 2.55rem;
 	font-weight: 300;
 	text-align: center;
+
+	
+
+	
+	
 }
 
 @media(min-width: 530px) {
@@ -792,6 +931,14 @@ a {
   .section-title {
     font-size: 3.75rem;
   }
+}
+
+.section-title strong {
+  font-weight: 500;
+}
+
+.section-title__blue {
+  color: #2f5572;
 }
 
 .section-title__icon {
@@ -805,21 +952,12 @@ a {
 @media(min-width: 530px) {
 
   .section-title__icon {
+    position: relative;
+    top: 8px;
     margin-right: .5rem;
     margin-left: 0;
     margin-bottom: 0;
     display: inline-block;
-  }
-}
-
-.section-title strong {
-  font-weight: 500;
-}
-
-@media(min-width: 800px) {
-
-  .section-title {
-    font-size: 3.75rem;
   }
 }
 
@@ -867,4 +1005,51 @@ a {
     font-size: 1.875rem;
     text-align: left;
   }
+}
+
+.testimonials {
+	background-color: rgba(255, 255, 255, .8);
+	padding: 0 18px 1px 18px;
+	margin-bottom: 96px;
+
+	
+}
+
+@media(min-width: 1010px) {
+
+  .testimonials {
+    margin-bottom: 0;
+    padding: 0 1.8125rem 1px 1.8125rem;
+  }
+}
+
+.testimonials--last {
+  margin-bottom: 0;
+}
+
+.testimonials__photo {
+  border-radius: 80px;/*can do 50%*/
+  overflow: hidden;/*to make the round corner apear, because its a photo the photo*/
+  width: 160px;/*need to set the width/height to beable to see the round corner 28 14:00*/
+  height: 160px;
+  margin: 0 auto -80px auto;/*-80px to push the title/description close to the photo*/
+  position: relative;
+  top: -80px;
+  border: 6px solid rgba(255, 255, 255, .8);
+}
+
+.testimonials__title {
+  color: #2f5572;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.testimonials__subtitle {
+  color: #9a6f32;
+  text-align: center;
+  font-weight: 400;
+  font-size: 0.937rem;
+  margin: .25rem 0 1rem 0;
 }
