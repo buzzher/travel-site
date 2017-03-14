@@ -1,0 +1,18 @@
+/* Test Commit 31 13:00 any code we include between the {  } will loop through each icon
+it will whatever we write between the {  } 12 times as the number of the icons
+to know all the word like shapes outer base go to github svg sprite https://github.com/jkphl/svg-sprite/blob/master/docs/templating.md */
+/*templates*/
+
+{{#shapes}} /*like a loop*/
+	{{#first}} /*show the backg..: url//{{sprite}} only one time on top in temp/../sprite.css*/
+		.icon {				
+			background-image: url('/assets/images/sprites/{{{sprite}}}'); /*url path point to sprite.svg file(all the icons)*/
+		}
+	{{/first}}
+	.icon--{{base}} { /*no space*/
+		width: {{width.outer}}px;
+		height: {{height.outer}}px;			/*sprite responsible to go to the svg(all the icons) folder and get the path for the sprite file*/
+		
+		background-position:  {{position.relative.xy}}
+	}
+{{/shapes}}
