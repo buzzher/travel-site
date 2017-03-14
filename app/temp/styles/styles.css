@@ -571,7 +571,7 @@ a {
 	background-color: #2f5572;
 	color: #fff;
 	text-decoration: none;
-	padding: .75rem 1.2rem;
+	padding: .77rem 1.2rem;
 	display: inline-block;
 
 	}
@@ -1173,3 +1173,27 @@ to know all the word like shapes outer base go to github svg sprite https://gith
 		
 		background-position:  36.69752421959096% 45.792307692307695%
 	}
+
+.site-footer {
+	background-color: #2f5572;
+	color: #fff;
+	padding: .5rem 0;
+	text-align: center;
+
+
+}
+
+.site-footer__text {
+  display: block;
+  margin-bottom: 1rem;
+  font-weight: 200;
+}
+
+@media(min-width: 800px) {
+
+  .site-footer__text {
+    display: inline;
+    margin-bottom: 0;
+    margin-right: 1.4rem;
+  }
+}
