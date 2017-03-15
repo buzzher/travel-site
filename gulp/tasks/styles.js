@@ -6,12 +6,13 @@ var gulp = require('gulp'), //require package name gulp
 	cssvars = require('postcss-simple-vars'),
 	nested = require('postcss-nested'),
 	autoprefixer = require('autoprefixer'),
-	mixins = require('postcss-mixins');
+	mixins = require('postcss-mixins'),
+	hexrgba = require('postcss-hexrgba')
 
 gulp.task('styles', function() {
 	//console.log('Imagine Sass or PostCSS tasks running here.');
 return gulp.src('./app/assets/styles/styles.css') //start
-	.pipe(postcss([cssImport, mixins, cssvars, nested, autoprefixer])) //the filter
+	.pipe(postcss([cssImport, mixins, cssvars, nested, hexrgba, autoprefixer])) //the filter
 	//when error in the style file, the git watch not stop running
 	.on('error', function(errorInfo) {
 		console.log(errorInfo.toString()); //show error msg in the console

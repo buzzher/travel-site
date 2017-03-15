@@ -1,0 +1,26 @@
+.primary-nav {
+	
+	&__pull-right {
+		float: right;
+	}
+
+	ul {
+		margin: 0;
+		padding: 0;
+		@mixin clearFix; /*35  13:00 because we float the li*/
+	}
+
+	li {
+		list-style: none;
+		float: left;
+		padding-right: 20px;
+	}
+
+	a {
+		color: #fff;
+		font-weight: 300;
+		text-decoration: none;
+		display: block; /*35 17:43 <p> but because li is float it's one line*/
+		padding: 12px 0;
+	}
+}

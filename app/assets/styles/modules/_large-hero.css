@@ -8,12 +8,17 @@
 
 	&__text-content { /*it will make it like .large-hero__text-content
 					instead of .large-hero .large-hero__text-content that not good in BEM*/
+	padding-top: 88px;
 	position: absolute;
 	top: 50%; /*text start after 50% of the img from the top*/
 	transform: translateY(-50%); /*push up -50% of the text(div) height*/
 	left: 0px;
 	width: 100%; /*make it the same width as the img*/
 	text-align: center; /*because width 100% we can center the text*/
+
+	@mixin atMedium {
+		padding-top: 60px;
+		}
 	}
 
 	&__title {

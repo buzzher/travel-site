@@ -1,0 +1,57 @@
+.site-header {
+	padding: 10px 0;
+	position: absolute;
+	width: 100%;
+	z-index: 2; /*make the header(.site-header) be on top of .large-hero*/
+		 /* 35 4:00 we download npm package to use var in the rgba(47, 85, 114, .3)*/
+	
+
+	@mixin atMedium {
+		background-color: rgba($mainBlue, .3);
+	}
+
+	&__btn-container {
+		float: right;
+	}
+
+	&__menu-icon {
+		width: 20px;
+		height: 20px;
+		background: #fff;
+		position: absolute;
+		top: 10px;
+		right: 10px;
+
+	@mixin atMedium {
+		display: none;
+		}
+	}
+
+	&__logo {
+		position: absolute;
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%) scale(.8); /*36 6:42 center the logo with the left: 50%*/
+		transform-origin: 50% 0; /*36 9:00*/
+		background-color: $mainBlue;
+		padding: 25px 36px;
+
+		@mixin atMedium {
+			left: auto;
+			transform: translateX(0%); /*36 6:42 center the logo with the left: 50%*/
+		}
+	}
+
+	&__logo__graphic {
+		text-indent: -8888px;
+	}
+
+	&__menu-content {
+		display: none;
+
+		@mixin atMedium {
+			display: block;
+		}
+	}
+	
+}
