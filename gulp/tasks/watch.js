@@ -28,6 +28,11 @@ gulp.task('watch', function() {
 		gulp.start('cssInject'); //use to be gulp.start('styles')
 	});
 
+//adding the scripts file to the gulp watch..everytime we save from scripts file its refresh in the browser
+watch('./app/assets/scripts/**/*.js', function() {
+	gulp.start('scriptsRefresh');
+})
+
 //new gulp task
 //everytime we save a change to any .css file(watch('./app/..'))
 //we trigering gulp.start('cssInject')task, and we build it in a way the styles will complete
@@ -35,8 +40,13 @@ gulp.task('watch', function() {
 gulp.task('cssInject', ['styles'], function() {
 	return gulp.src('./app/temp/styles/styles.css')
 	.pipe(browserSync.stream()); //stream() - make it availble in the browser after sync it
-})
+});
 
+//make the browser reload when saving files from the scripts of js after [scripts] generated
+//in other word - scriptsRefresh wont start untill scrips file finshed to coloect all his files, then the brwser reload
+gulp.task('scriptsRefresh', ['scripts'], function() {
+	browserSync.reload();
+})
 
 
 });

@@ -1212,11 +1212,29 @@ to know all the word like shapes outer base go to github svg sprite https://gith
 	padding: 10px 0;
 	position: absolute;
 	width: 100%;
-	z-index: 2;
+	z-index: 2; /*make the header(.site-header) be on top of .large-hero*/
+		 /* 35 4:00 we download npm package to -webkit-user-select: none;
+		 -moz-user-select: none;
+		 -ms-user-select: none;
+		 -o-user-select: none;
+		 user-select: none;e var in the rgba(47, 85, 114, .3)*/
+	-webkit-transition: background-color .3s ease-out;
+	transition: background-color .3s ease-out;
 	
 }
 
-/* 35 4:00 we download npm package to use var in the rgba(47, 85, 114, .3)*/
+/*when this background change, in 3s ease-out*/
+
+@media(min-width: 800px) {
+
+  .site-header {
+    padding: 10px 0;
+  }
+}
+
+.site-header--is-expanded {
+  background-color: rgba(47,85,114, .55);
+}
 
 @media(min-width: 800px) {
 
@@ -1225,19 +1243,67 @@ to know all the word like shapes outer base go to github svg sprite https://gith
   }
 }
 
-/*make the header(.site-header) be on top of .large-hero*/
+@media(min-width: 800px) {
 
-.site-header__btn-container {
-  float: right;
+  .site-header__btn-container {
+    float: right;
+  }
 }
 
 .site-header__menu-icon {
   width: 20px;
-  height: 20px;
-  background: #fff;
+  height: 19px;
   position: absolute;
   top: 10px;
   right: 10px;
+  z-index: 10;
+}
+
+/*42 12:50 be able to click the icon, the more z-index the element will be in from, z-index: -10 will be in the bottom*/
+
+.site-header__menu-icon::before {/*43 5:28 use to be &__top*/
+  content: "";/*make sure the top arear*/
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 3px;
+  background-color: #fff;
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;/*default 50% 50%, make the x 45deg from the edge and not from middle*/
+  -webkit-transition: -webkit-transform .3s ease-out;
+  transition: -webkit-transform .3s ease-out;
+  transition: transform .3s ease-out;
+  transition: transform .3s ease-out, -webkit-transform .3s ease-out;
+}
+
+.site-header__menu-icon__middle {
+  position: absolute;
+  top: 8px;
+  left: 0;
+  width: 20px;
+  height: 3px;
+  background-color: #fff;
+  -webkit-transition: all .3s ease-out;
+  transition: all .3s ease-out;/*make the middle bar fadeout one side to the other*/
+  -webkit-transform-origin: 0 50%;
+          transform-origin: 0 50%;
+}
+
+.site-header__menu-icon::after {/*43 5:28 use to be &__bottom*/
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 20px;
+  height: 3px;
+  background-color: #fff;
+  -webkit-transform-origin: 0 100%;
+          transform-origin: 0 100%;/*43 12:00 start tilt from the left(0) corner*/
+  -webkit-transition: -webkit-transform .3s ease-out;
+  transition: -webkit-transform .3s ease-out;
+  transition: transform .3s ease-out;
+  transition: transform .3s ease-out, -webkit-transform .3s ease-out;
 }
 
 @media(min-width: 800px) {
@@ -1245,6 +1311,26 @@ to know all the word like shapes outer base go to github svg sprite https://gith
   .site-header__menu-icon {
     display: none;
   }
+}
+
+/*new modifire*/
+
+.site-header__menu-icon--close-x::before {
+  -webkit-transform: rotate(45deg) scaleX(1.25);
+          transform: rotate(45deg) scaleX(1.25);/*make the top bar tilt 45deg and 25% longer*/
+}
+
+/*43 13:28 using nasted cuz we using different modifire(--close-x)jquery toggleClass*/
+
+.site-header__menu-icon--close-x .site-header__menu-icon__middle {
+  opacity: 0;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);/*43 15:53 mid bar fadeout*/
+}
+
+.site-header__menu-icon--close-x::after {
+  -webkit-transform: rotate(-45deg) scaleX(1.25) translateY(1px);
+          transform: rotate(-45deg) scaleX(1.25) translateY(1px);/*make the top bar tilt 45deg and 25% longer*/
 }
 
 .site-header__logo {
@@ -1273,18 +1359,51 @@ to know all the word like shapes outer base go to github svg sprite https://gith
 }
 
 .site-header__menu-content {
-  display: none;
+  opacity: 0;/*42 9:00 we change it from dispaly: none*/
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);/*make the text 20% larger*/
+  -webkit-transition: all .3s ease-out;
+  transition: all .3s ease-out;/*42 11:00 instead of opacity we write all*/
+  z-index: -10;/*when menu is opacity 0 mean the user can click on it so we z-index to be on the botton layer*/
+  position: relative;/*position: relative for the browser to akgnolage out z-index*/
+  padding-top: 90px;
+  text-align: center;
 }
 
 @media(min-width: 800px) {
 
   .site-header__menu-content {
-    display: block;
+    opacity: 1;/*42 10:00 use to be display: block;*/
+    z-index: 1;
+    padding-top: 0;
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
 
-.primary-nav__pull-right {
-  float: right;
+.site-header__menu-content--is-visible {/*show the menu by click on small screen*/
+  opacity: 1;
+  z-index: 1;/*will be in from. not overlapping by other element*/
+  -webkit-transform: scale(1);
+          transform: scale(1);/*42 11:50 transform the text to regular size, make nice transition*/
+}
+
+.primary-nav {
+	padding-top: 10px;
+}
+
+@media(min-width: 800px) {
+
+  .primary-nav {
+    padding-top: 0;
+  }
+}
+
+@media(min-width: 800px) {
+
+  .primary-nav__pull-right {
+    float: right;
+  }
 }
 
 .primary-nav ul {
@@ -1302,8 +1421,30 @@ to know all the word like shapes outer base go to github svg sprite https://gith
 
 .primary-nav li {
   list-style: none;
-  float: left;
-  padding-right: 20px;
+  display: inline-block;
+  padding-right: 7px;
+}
+
+@media(min-width: 800px) {
+
+  .primary-nav li {
+    padding-right: 20px;
+    float: left;
+    display: block;
+  }
+}
+
+/*saving space small screen, li last child in the list (last li) will have padding of 0*/
+
+.primary-nav li:last-child {
+  padding-right: 0;
+}
+
+@media(min-width: 800px) {
+
+  .primary-nav li:last-child {/*medium scree will have  20px padding*/
+    padding-right: 20px;
+  }
 }
 
 .primary-nav a {
@@ -1311,5 +1452,16 @@ to know all the word like shapes outer base go to github svg sprite https://gith
   font-weight: 300;
   text-decoration: none;
   display: block;/*35 17:43 <p> but because li is float it's one line*/
-  padding: 12px 0;
+  padding: 5px 8px;
+  font-size: .8rem;
+  background-color: rgba(47,85,114, .5);
+}
+
+@media(min-width: 800px) {
+
+  .primary-nav a {
+    padding: 12px 0;
+    font-size: 1rem;
+    background: transparent;/*its like no background*/
+  }
 }
