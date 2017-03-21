@@ -1,7 +1,15 @@
 				/* Object Oriented  see below 41 8:00*/
 import MobileMenu from './modules/MobileMenu'; //can be any name
+import RevealOnScroll from './modules/RevealOnScroll';
+import $ from 'jquery';
 
 var mobileMenu = new MobileMenu(); //create the object
+
+//45 3:00 replaceing this line var revealOnScroll = new RevealOnScroll();
+//new Person('Jane', 'Green')
+new RevealOnScroll($('.feature-item'), '85%'); //16 3:00 two arguments
+new RevealOnScroll($('.testimonials'), '60%'); //recyceble scroll
+
 
 
 /* - - - - - 40 3:00 function Person(fullName, favColor) {

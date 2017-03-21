@@ -1465,3 +1465,19 @@ to know all the word like shapes outer base go to github svg sprite https://gith
     background: transparent;/*its like no background*/
   }
 }
+
+.reveal-item {
+	opacity: 0;
+	-webkit-transition: all 1.5s ease-out;
+	transition: all 1.5s ease-out; /*45 8:28 use to be opacity */
+	-webkit-transform: scale(1.15);
+	        transform: scale(1.15);
+}
+
+/*45 8:00 make the reveal zoom in*/
+
+.reveal-item--is-visible {
+  opacity: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);/*45 8:00 make the reveal zoom in*/
+}
