@@ -1239,7 +1239,12 @@ to know all the word like shapes outer base go to github svg sprite https://gith
 @media(min-width: 800px) {
 
   .site-header {
+    position: fixed;
     background-color: rgba(47,85,114, .3);
+  }
+
+  .site-header--dark {
+    background-color: rgba(23, 51, 71, .85);
   }
 }
 
@@ -1339,6 +1344,10 @@ to know all the word like shapes outer base go to github svg sprite https://gith
   left: 50%;
   -webkit-transform: translateX(-50%) scale(.8);
           transform: translateX(-50%) scale(.8);/*36 6:42 center the logo with the left: 50%*/
+  -webkit-transition: -webkit-transform .3s ease-out;
+  transition: -webkit-transform .3s ease-out;
+  transition: transform .3s ease-out;
+  transition: transform .3s ease-out, -webkit-transform .3s ease-out;/*.site-header--dark transition*/
   -webkit-transform-origin: 50% 0;
           transform-origin: 50% 0;/*36 9:00*/
   background-color: #2f5572;
@@ -1352,10 +1361,15 @@ to know all the word like shapes outer base go to github svg sprite https://gith
     -webkit-transform: translateX(0%);
             transform: translateX(0%);/*36 6:42 center the logo with the left: 50%*/
   }
+
+  .site-header--dark .site-header__logo {/* & = give us the selector for the logo element, it will target the logo when the --dark in use*/
+    -webkit-transform: scale(.57);
+            transform: scale(.57);
+  }
 }
 
 .site-header__logo__graphic {
-  text-indent: -8888px;
+  text-indent: -8888px;/*move the html Clear.. out of the screen, leave it for google search*/
 }
 
 .site-header__menu-content {
@@ -1463,6 +1477,10 @@ to know all the word like shapes outer base go to github svg sprite https://gith
     padding: 12px 0;
     font-size: 1rem;
     background: transparent;/*its like no background*/
+  }
+
+  .primary-nav a.is-current-link {
+    color: #fabb69;
   }
 }
 

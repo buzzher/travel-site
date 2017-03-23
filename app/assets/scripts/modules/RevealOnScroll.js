@@ -17,7 +17,7 @@ class RevealOnScroll { //when scrolling down we reveal the features/testimonials
 
 	creatWaypoints() {
 		var that = this; //make a var to be abble to accessRevealOnScroll
-		this.itemsToReveal.each(function() { //this code run for each item
+		this.itemsToReveal.each(function() { //this code run for each item, each of the testimonials(4 of them)
 			var currentItem = this; //44 16:53 create var cuz we cant put this. inside new Waypoint cuz its a new object
 			new Waypoint({ //we have acces cuz we include it in the import, top page, have two elements element, handler
 				element: currentItem, //DOM element, we want to watch when scrolling down the page

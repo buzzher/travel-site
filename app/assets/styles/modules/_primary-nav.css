@@ -53,6 +53,10 @@
 			padding: 12px 0;
 			font-size: 1rem;
 			background: transparent; /*its like no background*/
+
+			&.is-current-link {
+				color: #fabb69;
+			}
 		}
 		
 	}

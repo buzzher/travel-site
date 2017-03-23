@@ -19,7 +19,13 @@
 	}
 
 	@mixin atMedium {
-			background-color: rgba($mainBlue, .3);
+		position: fixed;
+		background-color: rgba($mainBlue, .3);
+
+		&--dark {
+			background-color: rgba(23, 51, 71, .85);
+		}
+
 	}
 
 	&__btn-container {
@@ -98,6 +104,7 @@
 		top: 0;
 		left: 50%;
 		transform: translateX(-50%) scale(.8); /*36 6:42 center the logo with the left: 50%*/
+		transition: transform .3s ease-out; /*.site-header--dark transition*/
 		transform-origin: 50% 0; /*36 9:00*/
 		background-color: $mainBlue;
 		padding: 25px 36px;
@@ -105,11 +112,15 @@
 		@mixin atMedium {
 			left: auto;
 			transform: translateX(0%); /*36 6:42 center the logo with the left: 50%*/
+
+		.site-header--dark & { /* & = give us the selector for the logo element, it will target the logo when the --dark in use*/
+			transform: scale(.57);
+		}
 		}
 	}
 
 	&__logo__graphic {
-		text-indent: -8888px;
+		text-indent: -8888px; /*move the html Clear.. out of the screen, leave it for google search*/
 	}
 
 	&__menu-content {
