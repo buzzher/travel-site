@@ -1,0 +1,48 @@
+.modal {
+	position: fixed;
+	z-index: 5; /*z-index: 5 to be on top of the element*/
+	background-color: rgba(255, 255, 255, .94);
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	opacity: 0;
+	visibility: hidden; /*49 7:00 make the overlay hidden(dont see hover link)*/
+	transform: scale(1.2); /*make the zoom effect*/
+	transition: all .3s ease-out;
+
+	&--is-visible {
+		opacity: 1;
+		visibility: visible;
+		transform: scale(1); /*make the zoom effect*/
+	}
+
+	&__inner {
+		position: absolute; /*element in position absolute try to shrink wrap they size*/
+		width: 100%; /*full with of the position, if not it will be on the left corner*/
+		top: 50%; /*center it*/
+		transform: translateY(-50%); /*49 5:41 adjust the varticle posotion, or transform: translate(0, -50%);*/
+	}
+
+	&__description {
+		text-align: center;
+		font-size: 1.3rem;
+		font-weight: 300;
+		line-height: 1.65;
+	}
+
+	&__close {
+		position: absolute;
+		top: 15px;
+		right: 15px;
+		font-size: 2rem;
+		transform: scaleX(1.2); /*streching the horizon side of the x*/
+		transform-origin: 100% 0; /*49 2:53 keep it in the corner when window size change*/
+		color: $mainBlue;
+
+		&:hover {
+			color: $mainOrange;
+			cursor: pointer;
+		}
+	}
+}

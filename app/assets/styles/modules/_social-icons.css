@@ -1,0 +1,26 @@
+.social-icons {
+	text-align: center;
+
+	&__icon {
+		background-color: $mainOrange;
+		display: inline-block; /*will alow us to castume the height if need*/
+		margin: 0 5px 5px 5px;
+		width: 33%;
+		height: 72px;
+		position: relative;
+
+		@mixin atSmall {
+			width: 72px;
+			margin: 0 5px;
+		}
+
+
+		.icon { /*the icon imself*/
+			display: block; /*width and height from sprite will apply to the element*/
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%); /*48 16:28 make it center, pull 50% left, 50% up*/
+		}
+	}
+}

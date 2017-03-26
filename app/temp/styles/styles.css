@@ -615,6 +615,10 @@ a {
   max-width: 978px;
 }
 
+.wrapper--narrow {
+  max-width: 470px;
+}
+
 .wrapper--no-padding-until-medium {
   padding-left: 0;
   padding-right: 0;
@@ -949,6 +953,11 @@ a {
 
 .section-title__blue {
   color: #2f5572;
+}
+
+.section-title--less-margin {
+  margin-bottom: 1.3rem;
+  margin-top: 0;/*49 6:15 adjust the margin top*/
 }
 
 .section-title__icon {
@@ -1498,4 +1507,89 @@ to know all the word like shapes outer base go to github svg sprite https://gith
   opacity: 1;
   -webkit-transform: scale(1);
           transform: scale(1);/*45 8:00 make the reveal zoom in*/
+}
+
+.modal {
+	position: fixed;
+	z-index: 5; /*z-index: 5 to be on top of the element*/
+	background-color: rgba(255, 255, 255, .94);
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	opacity: 0;
+	visibility: hidden; /*49 7:00 make the overlay hidden(dont see hover link)*/
+	-webkit-transform: scale(1.2);
+	        transform: scale(1.2); /*make the zoom effect*/
+	-webkit-transition: all .3s ease-out;
+	transition: all .3s ease-out;
+}
+
+.modal--is-visible {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: scale(1);
+          transform: scale(1);/*make the zoom effect*/
+}
+
+.modal__inner {
+  position: absolute;/*element in position absolute try to shrink wrap they size*/
+  width: 100%;/*full with of the position, if not it will be on the left corner*/
+  top: 50%;/*center it*/
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);/*49 5:41 adjust the varticle posotion, or transform: translate(0, -50%);*/
+}
+
+.modal__description {
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 300;
+  line-height: 1.65;
+}
+
+.modal__close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 2rem;
+  -webkit-transform: scaleX(1.2);
+          transform: scaleX(1.2);/*streching the horizon side of the x*/
+  -webkit-transform-origin: 100% 0;
+          transform-origin: 100% 0;/*49 2:53 keep it in the corner when window size change*/
+  color: #2f5572;
+}
+
+.modal__close:hover {
+  color: #9a6f32;
+  cursor: pointer;
+}
+
+.social-icons {
+	text-align: center;
+}
+
+.social-icons__icon {
+  background-color: #9a6f32;
+  display: inline-block;/*will alow us to castume the height if need*/
+  margin: 0 5px 5px 5px;
+  width: 33%;
+  height: 72px;
+  position: relative;
+}
+
+@media(min-width: 530px) {
+
+  .social-icons__icon {
+    width: 72px;
+    margin: 0 5px;
+  }
+}
+
+.social-icons__icon .icon {/*the icon imself*/
+  display: block;/*width and height from sprite will apply to the element*/
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);/*48 16:28 make it center, pull 50% left, 50% up*/
 }

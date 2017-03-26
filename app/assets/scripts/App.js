@@ -3,6 +3,7 @@ import MobileMenu from './modules/MobileMenu'; //can be any name
 import RevealOnScroll from './modules/RevealOnScroll';
 import $ from 'jquery';
 import StickyHeader from './modules/StickyHeader';
+import Modal from './modules/Modal';
 
 var mobileMenu = new MobileMenu(); //create the object
 
@@ -12,6 +13,8 @@ new RevealOnScroll($('.feature-item'), '85%'); //16 3:00 two arguments
 new RevealOnScroll($('.testimonials'), '60%'); //recyceble scroll
 
 var stickyHeader  = new StickyHeader();
+
+var modal = new Modal();
 
 
 /* - - - - - 40 3:00 function Person(fullName, favColor) {
