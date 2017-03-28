@@ -708,8 +708,8 @@ a {
 
 @media(min-width: 1010px) {
 
-  .page-section--testimonials {
-    background: url('/assets/images/testimonials-bg.jpg') top center no-repeat;
+  .page-section--testimonials {/* 58 6:00 cuz github we change /assets/ to ../../assets/ */
+    background: url('../../assets/images/testimonials-bg.jpg') top center no-repeat;
     background-size: cover;
   }
 }
@@ -1083,8 +1083,8 @@ to know all the word like shapes outer base go to github svg sprite https://gith
 
 /*show the backg..: url//sprite-0f9283b3.svg only one time on top in temp/../sprite.css*/
 
-.icon {				
-			background-image: url('/assets/images/sprites/sprite-0f9283b3.svg'); /*url path point to sprite.svg file(all the icons)*/
+.icon {					/*58 5:54 change the (/assets/..) to ../../ cuz github server*/
+			background-image: url('../../assets/images/sprites/sprite-0f9283b3.svg'); /*url path point to sprite.svg file(all the icons)*/
 		}
 
 .icon--clear-view-escapes { /*no space*/

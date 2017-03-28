@@ -8,7 +8,18 @@
   
   <meta name="keywords" content="Travel planning, travel bundles, travel escapes, affordable travel">
   <meta name="description" content="Your clarity. One trip away. We create soul restoring journeys that inspire you to be you.">
+
+<!-- 56 16:00 telling usmin look for build, its css file, path where the file copy too -->
+
+  <!-- 58 5:00cuz we using github server we taking the forward slash( \ ) from the beggining of the path../assets/..-->
+  <!-- build:css assets/styles/styles.css -->
   <link rel='stylesheet' href='temp/styles/styles.css'>
+  <!-- endbuild -->
+
+<!-- kbuild:js /assets/scripts/Vendor.js -->
+<!-- link src='/temp/scripts/Vendor.js' -->
+<!-- endbuild -->
+
 </head>
 
 <body>
@@ -210,6 +221,8 @@
   <div class='modal__close'>X</div>
 </div> <!-- /modal -->
 
+<!-- build:js assets/scripts/App.js -->
   <script src='/temp/scripts/App.js'></script>
+  <!-- endbuild -->
 </body>
 </html>

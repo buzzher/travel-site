@@ -5,8 +5,8 @@ to know all the word like shapes outer base go to github svg sprite https://gith
 
 {{#shapes}} /*like a loop*/
 	{{#first}} /*show the backg..: url//{{sprite}} only one time on top in temp/../sprite.css*/
-		.icon {				
-			background-image: url('/assets/images/sprites/{{{sprite}}}'); /*url path point to sprite.svg file(all the icons)*/
+		.icon {					/*58 5:54 change the (/assets/..) to ../../ cuz github server*/
+			background-image: url('../../assets/images/sprites/{{{sprite}}}'); /*url path point to sprite.svg file(all the icons)*/
 		}
 	{{/first}}
 	.icon--{{base}} { /*no space*/

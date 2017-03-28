@@ -1,0 +1,51 @@
+.wrapper  {
+	overflow: hidden; /*22 15:00, clear the padding-right of the row.css gutters*/
+	padding-right: 18px;
+	padding-left: 18px;
+	max-width: 1236px; /*was 1200px but because the box-sizing we increase the width with the padding 18+18*/
+	margin-left: auto;
+	margin-right: auto;
+
+	&--medium {
+		max-width: 978px;
+	}
+
+	&--narrow {
+		max-width: 470px;
+	}
+
+	&--no-padding-until-medium {
+		padding-left: 0;
+		padding-right: 0;
+
+		@mixin atMedium {
+			padding-right: 18px;
+			padding-left: 18px;
+		}
+	}
+
+	&--no-padding-until-large {
+		padding-left: 0;
+		padding-right: 0;
+
+		@mixin atLarge {
+			padding-right: 18px;
+			padding-left: 18px;
+		}
+	}
+
+	.wrapper { /*nested wrapper(wrapper inside wrapper), we not apply the 18px padding from the main wrapper, exp img of the couple holding hends*/
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	&--b-margin {
+		margin-bottom: 1rem;
+
+		@mixin atSmall {
+			margin-bottom: 3.875rem;
+		}
+		
+	}
+	
+}

@@ -1,7 +1,7 @@
 //watch task
 var gulp = require('gulp'),
 	watch = require('gulp-watch'), //
-	browserSync = require('browser-sync').create();
+	browserSync = require('browser-sync').create(); //57 12:45 we copy it to build.js to se preview before going live
 
 //2arguments, name, what it will do(function)
 gulp.task('watch', function() {

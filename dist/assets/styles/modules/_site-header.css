@@ -1,0 +1,149 @@
+.site-header {
+	padding: 10px 0;
+	position: absolute;
+	width: 100%;
+	z-index: 2; /*make the header(.site-header) be on top of .large-hero*/
+		 /* 35 4:00 we download npm package to -webkit-user-select: none;
+		 -moz-user-select: none;
+		 -ms-user-select: none;
+		 -o-user-select: none;
+		 user-select: none;e var in the rgba(47, 85, 114, .3)*/
+	transition: background-color .3s ease-out; /*when this background change, in 3s ease-out*/
+
+	@mixin atMedium {
+		padding: 10px 0;
+	}
+	
+	&--is-expanded {
+		background-color: rgba($mainBlue, .55);
+	}
+
+	@mixin atMedium {
+		position: fixed;
+		background-color: rgba($mainBlue, .3);
+
+		&--dark {
+			background-color: rgba(23, 51, 71, .85);
+		}
+
+	}
+
+	&__btn-container {
+		
+		@mixin atMedium {
+			float: right;
+		}
+	}
+
+	&__menu-icon {
+		width: 20px;
+		height: 19px;
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		z-index: 10; /*42 12:50 be able to click the icon, the more z-index the element will be in from, z-index: -10 will be in the bottom*/
+
+		&::before { /*43 5:28 use to be &__top*/
+			content: ""; /*make sure the top arear*/
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 20px;
+			height: 3px;
+			background-color: #fff;
+			transform-origin: 0 0; /*default 50% 50%, make the x 45deg from the edge and not from middle*/
+			transition: transform .3s ease-out;
+		}
+
+		&__middle {
+			position: absolute;
+			top: 8px;
+			left: 0;
+			width: 20px;
+			height: 3px;
+			background-color: #fff;
+			transition: all .3s ease-out; /*make the middle bar fadeout one side to the other*/
+			transform-origin: 0 50%;
+		}
+
+		&::after { /*43 5:28 use to be &__bottom*/
+			content: "";
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 20px;
+			height: 3px;
+			background-color: #fff;
+			transform-origin: 0 100%; /*43 12:00 start tilt from the left(0) corner*/
+			transition: transform .3s ease-out;
+		}
+
+	@mixin atMedium {
+		display: none;
+		}
+	}
+
+	&__menu-icon--close-x { /*new modifire*/
+		&::before {
+			transform: rotate(45deg) scaleX(1.25); /*make the top bar tilt 45deg and 25% longer*/
+			}
+		/*43 13:28 using nasted cuz we using different modifire(--close-x)jquery toggleClass*/
+		.site-header__menu-icon__middle {
+			opacity: 0;
+			transform: scaleX(0); /*43 15:53 mid bar fadeout*/
+		}
+
+		&::after {
+			transform: rotate(-45deg) scaleX(1.25) translateY(1px); /*make the top bar tilt 45deg and 25% longer*/
+			}
+
+	}
+
+	&__logo {
+		position: absolute;
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%) scale(.8); /*36 6:42 center the logo with the left: 50%*/
+		transition: transform .3s ease-out; /*.site-header--dark transition*/
+		transform-origin: 50% 0; /*36 9:00*/
+		background-color: $mainBlue;
+		padding: 25px 36px;
+
+		@mixin atMedium {
+			left: auto;
+			transform: translateX(0%); /*36 6:42 center the logo with the left: 50%*/
+
+		.site-header--dark & { /* & = give us the selector for the logo element, it will target the logo when the --dark in use*/
+			transform: scale(.57);
+		}
+		}
+	}
+
+	&__logo__graphic {
+		text-indent: -8888px; /*move the html Clear.. out of the screen, leave it for google search*/
+	}
+
+	&__menu-content {
+		opacity: 0; /*42 9:00 we change it from dispaly: none*/
+		transform: scale(1.2); /*make the text 20% larger*/
+		transition: all .3s ease-out; /*42 11:00 instead of opacity we write all*/
+		z-index: -10; /*when menu is opacity 0 mean the user can click on it so we z-index to be on the botton layer*/
+		position: relative; /*position: relative for the browser to akgnolage out z-index*/
+		padding-top: 90px;
+		text-align: center;
+
+		@mixin atMedium {
+			opacity: 1; /*42 10:00 use to be display: block;*/
+			z-index: 1;
+			padding-top: 0;
+			transform: scale(1);
+		}
+
+		&--is-visible { /*show the menu by click on small screen*/
+			opacity: 1;
+			z-index: 1; /*will be in from. not overlapping by other element*/
+			transform: scale(1); /*42 11:50 transform the text to regular size, make nice transition*/
+		}
+	}
+	
+}

@@ -1,0 +1,10 @@
+.reveal-item {
+	opacity: 0;
+	transition: all 1.5s ease-out; /*45 8:28 use to be opacity */
+	transform: scale(1.15); /*45 8:00 make the reveal zoom in*/
+
+	&--is-visible {
+	opacity: 1;
+	transform: scale(1); /*45 8:00 make the reveal zoom in*/
+	}
+}

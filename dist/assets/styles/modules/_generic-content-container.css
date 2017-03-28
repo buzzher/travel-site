@@ -1,0 +1,17 @@
+.generic-content-container {
+	p {
+		font-weight: 300;
+		line-height: 1.65;
+		/*font-size: 1.125rem; move to @mixin, we use the browser default font size*/
+		margin: 0 0 1.8rem 0; /*margin between the <p>*/
+
+	@mixin atSmall {
+		font-size: 1.125rem;
+	}
+
+	}
+
+	p a {
+		font-weight: 700;
+	}
+}

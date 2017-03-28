@@ -1,0 +1,37 @@
+.feature-item {
+	position: relative; /*the icon will be absolute to the relative*/
+	padding-bottom: 2.50rem;
+
+	@mixin atSmall {
+		font-size: 	.875rem;
+		padding-left: 94px; /**/
+	}
+
+	&__icon {
+		display: block;
+		margin: 0 auto;
+		@mixin atSmall {
+			/*without relative in the feature-item, in absolute, the icon will be absolute to the body page(top left)*/
+		position: absolute; /*absolute to feature-item and not to the body*/
+		left: 0px;
+		text-align: center;
+		}
+	
+	}
+
+	&__title {
+		font-size: 1.6rem;
+		font-weight: 300;
+		margin-top: .7em;
+		margin-bottom: .8rem;
+		text-align: center;
+
+		@mixin atSmall {
+			margin-top: 1em;
+			font-size: 1.875rem;
+			text-align: left;
+		}
+	}
+
+	
+}

@@ -1,0 +1,63 @@
+.primary-nav {
+	padding-top: 10px;
+
+	@mixin atMedium {
+		padding-top: 0;
+	}
+	
+	&__pull-right {
+		@mixin atMedium {
+			float: right;
+		}
+	}
+
+
+	ul {
+		margin: 0;
+		padding: 0;
+		@mixin clearFix; /*35  13:00 because we float the li*/
+	}
+
+	li {
+		list-style: none;
+		display: inline-block;
+		padding-right: 7px;
+
+		@mixin atMedium {
+			padding-right: 20px;
+			float: left;
+			display: block;
+
+			}
+	}
+
+/*saving space small screen, li last child in the list (last li) will have padding of 0*/
+	li:last-child { 
+		padding-right: 0;
+
+		@mixin atMedium { /*medium scree will have  20px padding*/
+			padding-right: 20px;
+		}
+	}
+
+	a {
+		color: #fff;
+		font-weight: 300;
+		text-decoration: none;
+		display: block; /*35 17:43 <p> but because li is float it's one line*/
+		padding: 5px 8px;
+		font-size: .8rem;
+		background-color: rgba($mainBlue, .5);
+		
+		@mixin atMedium {
+			padding: 12px 0;
+			font-size: 1rem;
+			background: transparent; /*its like no background*/
+
+			&.is-current-link {
+				color: #fabb69;
+			}
+		}
+		
+	}
+}

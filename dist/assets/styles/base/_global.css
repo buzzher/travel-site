@@ -1,0 +1,18 @@
+body {
+	font-family: 'Roboto', sans-serif;
+	color: #333;
+}
+
+img {
+	max-width: 100%;
+	height: auto; 
+}
+
+* { /* * - mean can choose any element on the html page, we apply box-sizing globaly for any element on html*/
+	box-sizing: border-box; /*when add padding the width is more then 100%, box-sizing fix it*/
+}
+
+a {
+	color: $mainOrange; /*24 7:00 need to make sure its bellow the _var in the styles.css*/
+}
+

@@ -1,0 +1,43 @@
+.testimonials {
+	background-color: rgba(255, 255, 255, .8);
+	padding: 0 18px 1px 18px;
+	margin-bottom: 96px;
+
+	@mixin atLarge {
+		margin-bottom: 0;
+		padding: 0 1.8125rem 1px 1.8125rem;
+	}
+
+	&--last {
+		margin-bottom: 0;
+	}
+
+	&__photo {
+		border-radius: 80px; /*can do 50%*/
+		overflow: hidden; /*to make the round corner apear, because its a photo the photo*/
+		width: 160px; /*need to set the width/height to beable to see the round corner 28 14:00*/
+		height: 160px;
+		margin: 0 auto -80px auto; /*-80px to push the title/description close to the photo*/
+		position: relative;
+		top: -80px;
+		border: 6px solid rgba(255, 255, 255, .8);
+	}
+
+	&__title {
+		color: $mainBlue;
+		text-align: center;
+		font-size: 1.5rem;
+		font-weight: 500;
+		margin: 0;
+	}
+
+	&__subtitle {
+		color: $mainOrange;
+		text-align: center;
+		font-weight: 400;
+		font-size: 0.937rem;
+		margin: .25rem 0 1rem 0;
+	}
+
+	
+}

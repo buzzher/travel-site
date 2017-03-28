@@ -1,0 +1,82 @@
+.large-hero {
+	border-bottom: 10px solid $mainBlue;
+	position: relative;
+
+	&__image {
+		display: block;
+	}
+
+	&__text-content { /*it will make it like .large-hero__text-content
+					instead of .large-hero .large-hero__text-content that not good in BEM*/
+	padding-top: 88px;
+	position: absolute;
+	top: 50%; /*text start after 50% of the img from the top*/
+	transform: translateY(-50%); /*push up -50% of the text(div) height*/
+	left: 0px;
+	width: 100%; /*make it the same width as the img*/
+	text-align: center; /*because width 100% we can center the text*/
+
+	@mixin atMedium {
+		padding-top: 60px;
+		}
+	}
+
+	&__title {
+	font-weight: 300;
+	color: $mainBlue;
+	margin: 0;
+	font-size: 2.4rem; /*the base size for super small screen*/
+
+	/*use to be like that, now we use the folder mixins //17 12:00;
+	@media(min-width: 530px) {
+		font-size: 4.7rem;
+	}*/
+	@mixin atSmall {
+		font-size: 4.7rem;
+	}
+
+	/*	no need to adjast the sod\font on medium/large screen size
+		@mixin atMedium { font-size: 3.2rem; }
+	  	@mixin atLarge { font-size: 4.7rem; }*/
+
+	}
+
+	&__subtitle {
+	font-weight: 300;
+	color: $mainBlue;
+	font-size: 1.5rem;
+	margin: 0;
+
+		@mixin atSmall {
+			font-size: 2.9rem;
+		}
+	}
+
+	&__description {
+		color: #fff;
+		font-size: 1.1rem;
+		font-weight: 100;
+		text-shadow: 2px 2px 0 rgba(0, 0, 0, .1);
+		max-width: 30rem;
+		margin-right: auto;
+		margin-left: auto;
+
+		@mixin atSmall {
+			font-size: 1.875rem;
+		}
+
+	}
+			/*how to nest class that belong to eachother with BEM rulls
+				we move it to .large-hero and changing it to -- &__text-content --
+				and it not change the style of the html/css
+			.large-hero__text-content {
+				position: absolute;
+				top: 50%; /*text start after 50% of the img from the top*/
+				/*transform: translateY(-50%); push up -50% of the text(div) height*/
+				/*left: 0px;*/
+				/*width: 100%; make it the same width as the img*/
+				/*text-align: center; because width 100% we can center the text
+			}*/
+}
+
+
